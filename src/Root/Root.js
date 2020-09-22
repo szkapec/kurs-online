@@ -8,7 +8,7 @@ import Success from "../components/Cart/Promis/Success";
 import Home from '../components/Home/Home';
 import Course from '../components/Course/Course';
 import Default from '../components/Navbar/Default';
-
+import Usun from './usun';
 class Root extends React.Component {
   state = {};
 
@@ -24,6 +24,7 @@ class Root extends React.Component {
             <Route exact path="/cart" component={Cart} />
             <Route exact path="/canceled" component={Canceled} />
             <Route exact path="/success" component={Success} />
+            <Route exact path="/usun" component={Usun} />
             <Route component={Default} />
           </Switch>
         </Router>

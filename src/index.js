@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CartProvider from "./components/Cart/context";
-import './Styled/styleGlobal.css'
+import './Styled/styleGlobal.css';
+import './Styled/rootGlobal.css';
 import Root from './Root/Root';
 
 
