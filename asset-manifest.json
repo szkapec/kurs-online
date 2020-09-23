@@ -1,22 +1,23 @@
 {
   "files": {
     "main.css": "/kurs-online/static/css/main.c0ae2d3b.chunk.css",
-    "main.js": "/kurs-online/static/js/main.1e42b8a1.chunk.js",
-    "main.js.map": "/kurs-online/static/js/main.1e42b8a1.chunk.js.map",
+    "main.js": "/kurs-online/static/js/main.66945d5e.chunk.js",
+    "main.js.map": "/kurs-online/static/js/main.66945d5e.chunk.js.map",
     "runtime-main.js": "/kurs-online/static/js/runtime-main.40ff5d52.js",
     "runtime-main.js.map": "/kurs-online/static/js/runtime-main.40ff5d52.js.map",
-    "static/js/2.2d2fbbee.chunk.js": "/kurs-online/static/js/2.2d2fbbee.chunk.js",
-    "static/js/2.2d2fbbee.chunk.js.map": "/kurs-online/static/js/2.2d2fbbee.chunk.js.map",
+    "static/js/2.ade5a3e4.chunk.js": "/kurs-online/static/js/2.ade5a3e4.chunk.js",
+    "static/js/2.ade5a3e4.chunk.js.map": "/kurs-online/static/js/2.ade5a3e4.chunk.js.map",
     "index.html": "/kurs-online/index.html",
-    "precache-manifest.b886a1e888e1e92edac72b55090020dc.js": "/kurs-online/precache-manifest.b886a1e888e1e92edac72b55090020dc.js",
+    "precache-manifest.04d49067a388e390c5014d6912576a43.js": "/kurs-online/precache-manifest.04d49067a388e390c5014d6912576a43.js",
     "service-worker.js": "/kurs-online/service-worker.js",
     "static/css/main.c0ae2d3b.chunk.css.map": "/kurs-online/static/css/main.c0ae2d3b.chunk.css.map",
-    "static/js/2.2d2fbbee.chunk.js.LICENSE.txt": "/kurs-online/static/js/2.2d2fbbee.chunk.js.LICENSE.txt"
+    "static/js/2.ade5a3e4.chunk.js.LICENSE.txt": "/kurs-online/static/js/2.ade5a3e4.chunk.js.LICENSE.txt",
+    "static/media/home.jpg": "/kurs-online/static/media/home.a86860af.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.40ff5d52.js",
-    "static/js/2.2d2fbbee.chunk.js",
+    "static/js/2.ade5a3e4.chunk.js",
     "static/css/main.c0ae2d3b.chunk.css",
-    "static/js/main.1e42b8a1.chunk.js"
+    "static/js/main.66945d5e.chunk.js"
   ]
 }
