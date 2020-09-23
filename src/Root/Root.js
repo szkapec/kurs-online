@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
+
   Route,
   Switch,
   HashRouter,
@@ -21,7 +21,6 @@ class Root extends React.Component {
     return (
       <>
         <HashRouter basename='/'>
-          <Router>
             <Navbar />
             <Switch>
               <Route exact path="/" component={Home} />
@@ -33,7 +32,6 @@ class Root extends React.Component {
               <Route exact path="/usun" component={Usun} />
               <Route component={Default} />
             </Switch>
-          </Router>
         </HashRouter>
       </>
     );

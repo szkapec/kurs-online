@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import homes from '../../../images/home.jpg';
+import house from '../../../images/article/house.svg';
+import data from '../../../images/article/data.svg';
+import rocket from '../../../images/article/rocket.svg';
+import adress from '../../../images/article/adress.svg';
 export default function FirstBasic() {
   return (
     <StyledFirstBasic>
@@ -13,7 +17,7 @@ export default function FirstBasic() {
       <div className="whyus">Dlaczego akurat my? </div>
       <section className="article-container">
         <article>
-          <img src="/images/article/house.svg" alt="zdalny dostęp" />
+          <img src={house} alt="zdalny dostęp" />
           <h2>Zdalny dostęp</h2>
           <div>
             Do moich kursów masz dożywotni dostęp, czyli możesz z niego
@@ -21,14 +25,14 @@ export default function FirstBasic() {
           </div>
         </article>
         <article>
-          <img src="/images/article/data.svg" alt="aktualizacje" />
+          <img src={data} alt="aktualizacje" />
           <h2>Aktualizacje</h2>
           <div>
             Wszystkie aktualizacje w kursach są dla Ciebie natychmiast dostępne.
           </div>
         </article>
         <article>
-          <img src="/images/article/rocket.svg" alt="zatrudnienie" />
+          <img src={rocket} alt="zatrudnienie" />
           <h2>Zatrudnienie</h2>
           <div>
             Pod koniec każdego kursu programowania, przygotowujemy naszych
@@ -36,7 +40,7 @@ export default function FirstBasic() {
           </div>
         </article>
         <article>
-          <img src="/images/article/adress.svg" alt="certyfikat" />
+          <img src={adress} alt="certyfikat" />
           <i className="far fa-address-card"></i>
           <h2>Certyfikat</h2>
           <div>
