@@ -20,11 +20,18 @@ export default function Cart(props) {
   const stripeToken =
     "pk_test_51HRFuZHt5cjb9PVzBZ6OQ7nUtwkYJ1sowlw7kcof8eKWPcKiWT7X1gt3ZjxtaOIyTaUEWXQVJBk7OAAYeMnuC8df00bUimrTLA";
   const [stripe, setStripe] = useState(null);
+
+  
   const ctx = useContext(CartContext);
 
+  const ctxNew = JSON.parse(localStorage.getItem("items")) || []; 
+  
   useEffect(() => {
     if (window.Stripe) setStripe(window.Stripe(stripeToken));
   }, [stripeToken]);
+
+  useEffect(() => {
+  })
 
   function checkout() {
     const testing = ctx.tabs.map((item) => item.price);
@@ -70,8 +77,10 @@ export default function Cart(props) {
   return (
     <Container className="container">
       <div className="yourbasket">Twój koszyk</div>
-      {ctx.tabs.length !== 0 ? (
-        ctx.tabs.map((item) => (
+        {console.log(ctx.tabs)}
+        {console.log(JSON.parse(localStorage.getItem("items")), 'json parse')}
+      {ctxNew.length !== 0 ? (
+        ctxNew.map((item) => (
           <div key={item.name} className="cart">
             {console.log(item)}
             <div className="counter">Nazwa: {item.name}</div>
@@ -85,7 +94,7 @@ export default function Cart(props) {
             <img src={item.img} alt={item.name} />
           
             <div>
-              <a href="https://szkapec.github.io/kurs-online/cart">
+              <NavLink to="/cart">
                 <StyledButton
                   color={item.color}
                   onClick={() => {
@@ -94,7 +103,7 @@ export default function Cart(props) {
                 >
                   Usuń z koszyka
                 </StyledButton>
-              </a>
+              </NavLink>
             </div>
           </div>
         ))

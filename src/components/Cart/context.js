@@ -33,8 +33,10 @@ export default function CartProvider({ children }) {
       console.log("wieksze od 1");
     } else if (found.quantity === 1) {
       let locTab = tabs.filter((item) => item.price !== found.price);
+      console.log(locTab)
       localStorage.removeItem("items");
       found.quantity = 0;
+      tabs = locTab;
       localStorage.setItem("items", JSON.stringify(locTab));
     } else console.log("Błąd danych");
   }
