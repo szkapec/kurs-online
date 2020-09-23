@@ -90,10 +90,19 @@ export default function Cart(props) {
               {formatPrice(totalPriceNumber(item.pric, item.quantity))}
             </div>
             <div>Ilość: {item.quantity}</div>
-
-            <img src={item.img} alt={item.name} />
+            <NavLink to={`/course/${item.id}`}>
+                <StyledButton
+                widthSmall
+                  color={item.color}
+                >
+                  Szczegóły
+                </StyledButton>
+              </NavLink>
+            <NavLink to={`/course/${item.id}`}><img src={item.img} alt={item.name} /></NavLink>
           
             <div>
+         
+            
               <NavLink to="/cart">
                 <StyledButton
                   color={item.color}
@@ -104,19 +113,20 @@ export default function Cart(props) {
                   Usuń z koszyka
                 </StyledButton>
               </NavLink>
+             
             </div>
           </div>
         ))
       ) : (
-        <div className="cart">
-          Twój koszyk jest pusty
+        <div className="cart-blank">
+          <div>Twój koszyk jest pusty</div>
           <div className="counter">
             Dodaj do koszyka przedmioty i kup je szybko i wygodnie.
           </div>
         </div>
       )}
 
-      {ctx.tabs.length !== 0 && (
+      {ctxNew.length !== 0 && (
         <StyledButtonWrapper>
           <StyledButton shop onClick={checkout}>Kup teraz</StyledButton>
         </StyledButtonWrapper>
@@ -126,6 +136,7 @@ export default function Cart(props) {
 }
 
 const Container = styled.div`
+
   font-family: "Kumbh Sans", sans-serif;
   max-width: 1280px;
   display: block;
@@ -146,6 +157,8 @@ const Container = styled.div`
   .cart {
     margin-top: 40px;
     text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #95a5a6;
     img {
       width: 80%;
       max-width: 400px;
@@ -192,6 +205,20 @@ const Container = styled.div`
       .div8 {
         grid-area: 1 / 1 / 2 / 2;
       }
+    }
+  }
+  .cart-blank {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+    :last-child {
+      font-size: 20px;
+    }
+    div {
+      padding: 20px;
+      line-height: 25px;
+
     }
   }
 `;

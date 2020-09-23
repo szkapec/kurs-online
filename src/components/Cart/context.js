@@ -9,8 +9,8 @@ export default function CartProvider({ children }) {
     setItems((prevState) => [...prevState, item]);
   }
   function localAddToCart(item) {
-    let { color, name, pric, price, quantity, img } = item;
-    let product = { color, name, pric, price, quantity, img };
+    let { color, name, pric, price, quantity, img, id } = item;
+    let product = { color, name, pric, price, quantity, img, id };
     let found = tabs.find((items) => items.price === product.price);
     if (found) {
       let elTab = tabs.find((item) => item.price === found.price);
@@ -23,8 +23,8 @@ export default function CartProvider({ children }) {
     localStorage.setItem("items", JSON.stringify(tabs));
   }
   function localRemoveToCart(item) {
-    let { color, name, pric, price, quantity } = item;
-    let product = { color, name, pric, price, quantity };
+    let { color, name, pric, price, quantity, id } = item;
+    let product = { color, name, pric, price, quantity, id };
     let found = tabs.find((items) => items.price === product.price);
     if (found.quantity >= 2) {
       localStorage.removeItem("items");

@@ -105,6 +105,7 @@ const StyledFirstBasic = styled.div`
   }
 
   .article-container {
+    line-height: 25px;
     max-width: 1280px;
     display: block;
     margin: 0 auto;
@@ -134,7 +135,7 @@ const StyledFirstBasic = styled.div`
       transition-duration: .5s;
       padding: 30px;
       :hover {
-        font-size: 18px;
+        /* font-size: 18px; */
         transform: scale(1,1);
 
         img {

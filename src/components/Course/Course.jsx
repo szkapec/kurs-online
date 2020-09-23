@@ -41,7 +41,7 @@ export default class Course extends Component {
           </div>
         </section>
         <section className="description">
-          <div>Opis kursu</div>
+          <div >Opis kursu</div>
           <p>{description}</p>
         </section>
         <section className="list">
@@ -79,6 +79,9 @@ export default class Course extends Component {
             </div>
             <div className="descriptionOpinion">{descriptionOpinion}</div>
           </div>
+        </section>
+        <section className="finish">
+
         </section>
       </StyledComponent>
     );

@@ -17,7 +17,7 @@ export default function Store({addCourse, radius}) {
   const nav = "=>"
   return (
     <>
-    <StyledDesc radius={radius} className="counter">Kliknij w zdjęcie aby zobaczyć opis
+    <StyledDesc radius={radius} className="counter">
     {addCourse&&<div className="add-course">Popularne kursy programowania</div>}
     </StyledDesc>
     
@@ -32,9 +32,15 @@ export default function Store({addCourse, radius}) {
                 alt={product.name}
               />
             </NavLink>
+            <StyledButton widthSmall color={product.color}>
+              <NavLink exact to={`/course/${product.id}`}>
+                Szczegóły
+              </NavLink>
+            </StyledButton>
           </div>
           <div>{product.name}</div>
           <div>
+            
             <StyledButton
               color={product.color}
               onClick={() => {
@@ -135,7 +141,7 @@ const StyledDesc = styled.div`
   .add-course {
     font-size: 20px;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     background-color: #ecf0f1;
     border-radius: 30px 30px 0px 0px;
     text-decoration: underline;

@@ -11,13 +11,18 @@ background-color: #F4F0F0;
 
 
 
+
+
 .opinion {
     max-width: 900px;
     display: block;
     margin: 0 auto;
     background-color: ${(props) => props.color};
     min-height: 200px;
-    padding: 20px 0;
+    padding: 20px 0 50px;
+   border-bottom-left-radius: 30px;
+   border-bottom-right-radius: 30px;
+   
     .container {
         background-color: #fbfbf8;
         width: 80%;
@@ -54,6 +59,12 @@ background-color: #F4F0F0;
             text-align: center;
         }
   }
+}
+
+.finish {
+    width: 100%;
+    height: 60px;
+    background-color: #ecf0f1;
 }
 .list {
     max-width: 900px;
@@ -99,10 +110,23 @@ background-color: #F4F0F0;
         padding-bottom: 20px;
     }
     p {
-        font-size: 16px;
+       
         margin: 0 15px 15px;
         line-height: 20px;
     }
+    font-size: 16px;
+    @media(min-width: 500px){
+        font-size: 18px;
+        p {
+            line-height: 24px;
+        }
+}
+    @media(min-width: 800px){
+        font-size: 20px;
+        p {
+            line-height: 28px;
+        }
+}
 
 }
 .course {
@@ -135,11 +159,11 @@ export const StyledSection = styled.section`
     background-color: ${(props) => props.color};
     height: 150px;
     text-align: center;
-    padding: 40px 10px 0 10px;
+    padding: 30px 10px 0 10px;
     font-size: 18px;
   
 div {
-    padding-top: 10px;
+    padding-top: 5px;
 }
 `;
 

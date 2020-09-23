@@ -11,7 +11,7 @@ export const StyledButton = styled.button`
   text-decoration: none;
   list-style: none;
   outline: 0;
-  min-width: 190px;
+  min-width: ${props => props.widthSmall?'100px':'190px'};
   color: black;
 
   a {

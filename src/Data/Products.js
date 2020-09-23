@@ -95,7 +95,7 @@ const products = [
     pric: "24000",
     name: "Kurs Java!",
     color: "#E82F2E",
-    id: 1,
+    id: 5,
     img: 'https://miro.medium.com/max/620/1*Pb47wnmlN201inlk7FnT7A.jpeg',
     description: `W moim kursie Javy nie musisz znać podstaw programowania. Nauczysz się wszystkiego od zera. Obal mit, że programowanie jest dla nielicznych. Pisz własne programy! :)
     Java jest językiem zorientowanym obiektowo. Jego główną zaletą jest to, że może być odpalony wszędzie na Windowsie, Linuksie, Uniksie, Macintoshu, w tel. komórkowym itd.
@@ -121,7 +121,7 @@ const products = [
     pric: "24000",
     name: "Kurs Java Spring",
     color: "#6CB33E",
-    id: 1,
+    id: 6,
     img: "https://spring.io/images/OG-Spring.png",
     description: `Chcesz zostać ekspertem w Spring Framework? Chcesz zostać Modern Spring Developer ? Dołącz do kursu, aby nauczyć się Spring Framework w nowoczesny sposób - sposób, w jaki projekty Java w świecie rzeczywistym go używają!
     Poznaj magię Spring Framework . Od IOC (Inversion of Control), DI (Dependency Injection), Application Context do świata Java Spring Boot, Spring AOP , Spring JDBC i JPA. Przygotuj się na niesamowitą podróż. 
