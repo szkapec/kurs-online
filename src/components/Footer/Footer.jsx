@@ -10,10 +10,9 @@ export default function Footer() {
     <StyledComponentsFooter>
       <StyledComponents>
         <section>
-          <h2>Nagłówek</h2>
+          <h2>Aplikacja</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Przed
-            miękkim, a nie tristique convallis Nullam ac{" "}
+            To jest testowa aplikacja napisana w React, react-hook, stripe, local-storage, context-api, styled-components. Zapraszam do testowania! :)
           </p>
           <span className="heading">
             <a href="https://www.facebook.com/NoweStronyInternetowe">
