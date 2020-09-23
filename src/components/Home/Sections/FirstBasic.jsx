@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-
+import homes from '../../../images/home.jpg';
 export default function FirstBasic() {
   return (
     <StyledFirstBasic>
       <section className="home-picture">
-        <img src={`/images/home.jpg`} alt="Home" />
+        <img src={homes} alt="Homes" />
         <div className="home-description">Zdobądź zawód marzeń!</div>
         <div className="home-school">W szkole programowania #1</div>
       </section>
