@@ -11,7 +11,7 @@ export const StyledButton = styled.button`
   text-decoration: none;
   list-style: none;
   outline: 0;
-
+  min-width: 190px;
   color: black;
 
   a {
@@ -19,7 +19,6 @@ export const StyledButton = styled.button`
     color: black;
     list-style: none;
   }
-
   :hover {
     color: #34495e;
     font-size: 20px;

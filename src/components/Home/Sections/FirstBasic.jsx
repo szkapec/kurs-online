@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import homes from '../../../images/home.jpg';
-import house from '../../../images/article/house.svg';
-import data from '../../../images/article/data.svg';
-import rocket from '../../../images/article/rocket.svg';
-import adress from '../../../images/article/adress.svg';
+import homes from '../../../image/home.jpg';
+import house from '../../../image/article/house.svg';
+import data from '../../../image/article/data.svg';
+import rocket from '../../../image/article/rocket.svg';
+import adress from '../../../image/article/adress.svg';
 export default function FirstBasic() {
   return (
     <StyledFirstBasic>
@@ -54,6 +54,7 @@ export default function FirstBasic() {
 }
 
 const StyledFirstBasic = styled.div`
+
   .home-picture {
     width: 100%;
     height: 400px;

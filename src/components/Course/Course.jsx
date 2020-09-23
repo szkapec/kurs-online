@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Product from "../../Data/Products";
 import { power } from "react-icons-kit/icomoon/power";
 import { SideIcon, StyledSection, StyledComponent } from "./Course.css";
-
+import stars from '../../image/star.png';
 export default class Course extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -12,6 +12,7 @@ export default class Course extends Component {
     let product = Product.find((item) => item.id == this.props.match.params.id);
     const {
       color,
+      img,
       name,
       stage,
       description,
@@ -44,7 +45,7 @@ export default class Course extends Component {
           <p>{description}</p>
         </section>
         <section className="list">
-          <img src={`/images/${price}.jpg`} alt={name} />
+          <img src={img} alt={name} />
           <div>{name}</div>
           <h2>Dla kogo jest ten kurs?</h2>
           <ul>
@@ -69,11 +70,11 @@ export default class Course extends Component {
             </div>
             <div className="counter"></div>
             <div>
-              <img className="star" src={`/images/star.png`} alt="star" />
-              <img className="star" src={`/images/star.png`} alt="star" />
-              <img className="star" src={`/images/star.png`} alt="star" />
-              <img className="star" src={`/images/star.png`} alt="star" />
-              <img className="star" src={`/images/star.png`} alt="star" />
+              <img className="star" src={stars} alt="star" />
+              <img className="star" src={stars} alt="star" />
+              <img className="star" src={stars} alt="star" />
+              <img className="star" src={stars} alt="star" />
+              <img className="star" src={stars} alt="star" />
               <span className="star-time">rok temu</span>
             </div>
             <div className="descriptionOpinion">{descriptionOpinion}</div>

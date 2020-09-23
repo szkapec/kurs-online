@@ -22,12 +22,13 @@ export default function Store({addCourse, radius}) {
     </StyledDesc>
     
     <Container>
+      {console.log(products)}
       {products.map((product) => (
         <div key={product.name} className="course">
           <div>
             <NavLink exact to={`/course/${product.id}`}>
               <img
-                src={`/images/${product.price}.jpg`}
+                src={product.img}
                 alt={product.name}
               />
             </NavLink>
@@ -65,7 +66,7 @@ const Container = styled.div`
   position: relative;
   text-align: center;
   background-color: #ecf0f1;
-
+  padding-bottom: 50px;
 
   .nav {
     position: absolute;

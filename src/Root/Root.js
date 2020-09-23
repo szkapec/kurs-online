@@ -1,6 +1,6 @@
 import React from "react";
 import {
-
+  BrowserRouter as Router,
   Route,
   Switch,
   HashRouter,
@@ -13,14 +13,14 @@ import Success from "../components/Cart/Promis/Success";
 import Home from "../components/Home/Home";
 import Course from "../components/Course/Course";
 import Default from "../components/Navbar/Default";
-import Usun from "./usun";
+import Footer from "../components/Footer/Footer";
 class Root extends React.Component {
   state = {};
 
   render() {
     return (
       <>
-        <HashRouter basename='/'>
+        <Router basename='/'>
             <Navbar />
             <Switch>
               <Route exact path="/" component={Home} />
@@ -29,10 +29,11 @@ class Root extends React.Component {
               <Route exact path="/cart" component={Cart} />
               <Route exact path="/canceled" component={Canceled} />
               <Route exact path="/success" component={Success} />
-              <Route exact path="/usun" component={Usun} />
+              <Route exact path="/usun" component={Footer} />
               <Route component={Default} />
             </Switch>
-        </HashRouter>
+            <Footer/>
+        </Router>
       </>
     );
   }

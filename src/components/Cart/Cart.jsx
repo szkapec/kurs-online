@@ -3,6 +3,8 @@ import { CartContext } from "./context";
 import styled from "styled-components";
 import { StyledButton } from "../../Styled/Button";
 import { NavLink } from "react-router-dom";
+
+
 function formatPrice(price) {
   return `${(price * 0.01).toFixed(2)}zł`;
 }
@@ -78,15 +80,10 @@ export default function Cart(props) {
               Koszt całkowity:{" "}
               {formatPrice(totalPriceNumber(item.pric, item.quantity))}
             </div>
-            <div>Ilość: {item.quantity} kurs</div>
+            <div>Ilość: {item.quantity}</div>
 
-            <img src={`/images/${item.price}.jpg`} alt={item.name} />
-            {/* <NavLink exact to={`/course/${item.id}`}>
-              <img
-                src={`/images/${item.price}.jpg`}
-                alt={item.name}
-              />
-              </NavLink> */}
+            <img src={item.img} alt={item.name} />
+          
             <div>
               <a href="/cart">
                 <StyledButton
@@ -112,7 +109,7 @@ export default function Cart(props) {
 
       {ctx.tabs.length !== 0 && (
         <StyledButtonWrapper>
-          <StyledButton onClick={checkout}>Kup teraz</StyledButton>
+          <StyledButton shop onClick={checkout}>Kup teraz</StyledButton>
         </StyledButtonWrapper>
       )}
     </Container>

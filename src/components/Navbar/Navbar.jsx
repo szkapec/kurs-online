@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { ic_play_for_work } from "react-icons-kit/md/ic_play_for_work";
 import { withBaseIcon } from "react-icons-kit";
+import mail from '../../image/nav/mail.svg';
+import phone from '../../image/nav/phone.svg'
 export default function Navbar() {
   return (
     <StyledNav>
@@ -20,10 +22,10 @@ export default function Navbar() {
 
       
       <div className="responsive-mail"> 
-        <img src="/images/nav/mail.svg" alt="mail"/> <a href="mailto:mateusz.kapron24@gmail.com">mateusz.k@gmail.com</a>
+        <img src={mail} alt="mail"/> <a href="mailto:mateusz.kapron24@gmail.com">mateusz.k@gmail.com</a>
       </div>
       <div className="responsive-phone"> 
-       <img src="/images/nav/phone.svg" alt="mail"/> <a href="tel:+48661360889">661-360-889 </a> 
+       <img src={phone} alt="mail"/> <a href="tel:+48661360889">661-360-889 </a> 
       </div>
 
       <div className="cart">

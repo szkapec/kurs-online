@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-
+import student from '../../../image/student.svg';
+import book from '../../../image/book.svg';
+import time from '../../../image/time.svg';
 export default function Amount() {
   const [counter, setCounter] = useState(2000);
   const [course, setCourse] = useState(0);
@@ -66,21 +68,21 @@ export default function Amount() {
     <StyledCounter className="counter">
       <article>
         {" "}
-        <img src="/images/student.svg" alt="student" />{" "}
+        <img src={student} alt="student" />{" "}
         <div>
           Zadowolonych studentów <p>{counter}</p>
         </div>{" "}
       </article>
       <article>
         {" "}
-        <img src="/images/book.svg" alt="course" />{" "}
+        <img src={book} alt="course" />{" "}
         <div>
           Ilość kursów <p>{course}</p>
         </div>{" "}
       </article>
       <article>
         {" "}
-        <img src="/images/time.svg" alt="time" />{" "}
+        <img src={time} alt="time" />{" "}
         <div>
           Ilość godzin <p>{hourse}</p>
         </div>{" "}
