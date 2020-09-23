@@ -85,7 +85,7 @@ export default function Cart(props) {
             <img src={item.img} alt={item.name} />
           
             <div>
-              <a href="/cart">
+              <a href="https://szkapec.github.io/kurs-online/#/cart">
                 <StyledButton
                   color={item.color}
                   onClick={() => {
