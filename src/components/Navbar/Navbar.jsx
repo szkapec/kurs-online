@@ -29,7 +29,7 @@ export default function Navbar() {
       </div>
 
       <div className="cart">
-        <NavLink exact to="cart">
+        <NavLink exact to="/cart">
           Koszyk <SiceIconNav icon={ic_play_for_work} />{" "}
         </NavLink>
       </div>

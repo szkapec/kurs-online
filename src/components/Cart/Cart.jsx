@@ -46,6 +46,7 @@ export default function Cart(props) {
     if (testing.length === 1) {
       stripe.redirectToCheckout({
         lineItems: [{ price: tabs[0], quantity: ctx.tabs[0].quantity }],
+      
         mode: "payment",
         successUrl: "http://localhost:3000/success",
         cancelUrl: "http://localhost:3000/canceled",
@@ -76,11 +77,12 @@ export default function Cart(props) {
 
   return (
     <Container className="container">
+      <StyledCart>
+
       <div className="yourbasket">Twój koszyk</div>
-        {console.log(ctx.tabs)}
-        {console.log(JSON.parse(localStorage.getItem("items")), 'json parse')}
       {ctxNew.length !== 0 ? (
         ctxNew.map((item) => (
+
           <div key={item.name} className="cart">
             {console.log(item)}
             <div className="counter">Nazwa: {item.name}</div>
@@ -90,14 +92,14 @@ export default function Cart(props) {
               {formatPrice(totalPriceNumber(item.pric, item.quantity))}
             </div>
             <div>Ilość: {item.quantity}</div>
-            <NavLink to={`/course/${item.id}`}>
+            <div><NavLink to={`/course/${item.id}`}>
                 <StyledButton
                 widthSmall
                   color={item.color}
                 >
                   Szczegóły
                 </StyledButton>
-              </NavLink>
+              </NavLink></div>
             <NavLink to={`/course/${item.id}`}><img src={item.img} alt={item.name} /></NavLink>
           
             <div>
@@ -131,17 +133,22 @@ export default function Cart(props) {
           <StyledButton shop onClick={checkout}>Kup teraz</StyledButton>
         </StyledButtonWrapper>
       )}
+      </StyledCart>
     </Container>
   );
 }
-
 const Container = styled.div`
+  background-color: #fff;
+`
+
+
+const StyledCart = styled.div`
 
   font-family: "Kumbh Sans", sans-serif;
   max-width: 1280px;
   display: block;
   margin: 0px auto;
-  background-color: #ecf0f1;
+  background-color: white;
   min-height: 100vh;
 
   .yourbasket {

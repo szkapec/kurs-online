@@ -18,8 +18,10 @@ export default function Home() {
 }
 
 const StyledComponent = styled.div`
+z-index: 3;
   font-family: "Kumbh Sans", sans-serif;
-
+  z-index: 3;
+  background-color: #fff;
 
   /* Global line */
   .line {

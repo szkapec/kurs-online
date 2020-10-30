@@ -38,6 +38,7 @@ export default function Programing() {
 }
 
 const StyledPrograming = styled.section`
+  z-index: 3;
   padding: 15px 10px 0 10px;
   max-width: 1280px;
   display: block;

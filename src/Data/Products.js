@@ -9,6 +9,7 @@ const products = [
     description: `Podczas tego kursu opanujesz techniki, które pozwolą Ci tworzyć proste, ale fajne strony internetowe, które będą dobrze wyglądać również na urządzeniach mobilnych - pod koniec kursu zbudujesz taką stronę-wizytówkę.
      Nauczysz się od podstaw tworzyć strukturę strony w HTML i stylować ją przy pomocy CSS. Poznasz również przydatne narzędzia usprawniające pracę związaną z tworzeniem stron. Zrobimy bardzo dużo w kierunku zostania przez Ciebie dobrym web developerem.`,
     stage: "Programowanie od podstaw w HTML+CSS + podstawy JS. (Etap 1)",
+    desc: "HTML jest podstawą wszystkich stron internetowych. Definiuje strukturę strony, podczas gdy CSS określa jej styl. HTML i CSS to początek wszystkiego, co musisz wiedzieć, aby stworzyć swoją pierwszą stronę internetową! Naucz się obu i zacznij tworzyć niesamowite strony internetowe.",
     popular: "1291",
     who: [
         "Osoby będące na początku drogi do zostania front-end developerem i rozpoczęcia kariery w branży IT.",
@@ -28,6 +29,7 @@ const products = [
     id: 2,
     img: "https://ocs-pl.oktawave.com/v1/AUTH_2887234e-384a-4873-8bc5-405211db13a2/splay/2016/04/javascript-encode-.png",
     description: `Ten kurs pomoże Ci uzyskać biegłość w posługiwaniu się kluczowymi właściwościami CSS a także sprawnie wykorzystywać JavaScript i jQuery w celu uatrakcyjnienia (ożywienia) tworzonego projektu. Nauczysz się korzystać z nowoczesnych, bardziej zaawansowanych technik i rozwiązań CSS, takich jak Flexbox czy CSS Animation. Poznasz też preprocesor Sass. Podczas kursu zrobimy mnóstwo projektów, np. galeria, slajder, modal/popup, menu hamburger, animacje, efekty związane z kliknięciem, najechaniem czy skrolowaniem strony.` ,
+    desc: "Ten kurs pomoże Ci uzyskać biegłość w posługiwaniu się kluczowymi właściwościami CSS a także sprawnie wykorzystywać JavaScript i jQuery w celu uatrakcyjnienia (ożywienia) tworzonego projektu. Nauczysz się korzystać z nowoczesnych, bardziej zaawansowanych technik",
     stage: `Naucz się tworzyć atrakcyjne strony internetowe z wykorzystaniem bardziej zaawansowanych technik CSS i JavaScript (Etap 2)`,
     popular: "1891",
     who: [
@@ -52,6 +54,7 @@ const products = [
     Najlepszym sposobem nauki Node jest tworzenie aplikacji Node.
     
     Od samego początku będziesz programować każdy projekt i pracować nad wyzwaniami, które zaprojektowałem, aby wzmocnić to, czego się nauczyłeś. Zapewni to praktyczne doświadczenie niezbędne do stworzenia i uruchomienia własnego projektu, gdy skończysz. ` ,
+    desc: 'Kompletny kurs programisty Node.js obejmuje podstawy Node, zanim zagłębimy się w świetne narzędzia, takie jak Express, Mongoose i MongoDB.',
     stage: "Kompletny kurs programisty Node.js obejmuje podstawy Node, Express, Mongoose i MongoDB (Etap4)" ,
     popular: "3812",
     who: [
@@ -75,6 +78,7 @@ const products = [
     id: 3,
     img: 'https://miro.medium.com/max/3840/1*yjH3SiDaVWtpBX0g_2q68g.png',
     description: `Biblioteka React to jedno z najpopularniejszych rozwiązań w pracy front-end developera.  React to nowe podejście do tworzenia interfejsów użytkownika. Ten kurs ma dać Ci mocne fundamenty teoretyczne, ale także, poprzez wiele przykładów, nauczyć cię praktycznego wykorzystania React. To nie jest chwilowa moda czy przypadek, że mnóstwo ogłoszeń o pracę na stanowisku front-end developera wymaga znajomości Reacta. Jeśli poznałaś/poznałeś już JavaScript, to kolejnym krokiem w Twojej nauce może być React.`,
+    desc: "Biblioteka React to jedno z najpopularniejszych rozwiązań w pracy front-end developera.  React to nowe podejście do tworzenia interfejsów użytkownika.",
     stage: "Naucz się frameworka React, jest to najpopularniejsza biblioteka JavaScript! (Etap3)" ,
     popular: '2971' ,
     who: [
@@ -101,6 +105,7 @@ const products = [
     Java jest językiem zorientowanym obiektowo. Jego główną zaletą jest to, że może być odpalony wszędzie na Windowsie, Linuksie, Uniksie, Macintoshu, w tel. komórkowym itd.
     Java jest jednym z najbardziej pożądanych języków przez pracodawców - poznając Jave na pewno łatwo znajdziesz pracę. W Javie możesz tworzyć aplikacje mobilne na Androida, gry komputerowe (Minecraft), aplikacje pulpitowe i wiele innych.
     `,
+    desc: "Dzięki temu kursowi nauczysz sie wszystkiego od zera. Obal mit, że programowanie jest dla nielicznych. Pisz własne programy! :)",
     stage: "Stworzony z myślą o osobach, które nie wiedzą nic na temat programowania w Java. Stań się ekspertem w Javie już dziś! (Etap rozszerzony!)",
     popular: "831",
     who: [
@@ -126,6 +131,7 @@ const products = [
     description: `Chcesz zostać ekspertem w Spring Framework? Chcesz zostać Modern Spring Developer ? Dołącz do kursu, aby nauczyć się Spring Framework w nowoczesny sposób - sposób, w jaki projekty Java w świecie rzeczywistym go używają!
     Poznaj magię Spring Framework . Od IOC (Inversion of Control), DI (Dependency Injection), Application Context do świata Java Spring Boot, Spring AOP , Spring JDBC i JPA. Przygotuj się na niesamowitą podróż. 
     `,
+    desc: "Dzięki temu kursowi poznasz magię Spring Framework . Od IOC (Inversion of Control), DI (Dependency Injection), Application Context do świata Java Spring Boot, Spring AOP ,",
     stage: "Stworzony z myślą o osobach, które nie wiedzą nic na temat programowania w Java. Stań się ekspertem w Javie już dziś! (Etap rozszerzony!)",
     popular: "831",
     who: [

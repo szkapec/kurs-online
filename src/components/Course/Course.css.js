@@ -1,13 +1,21 @@
 import { withBaseIcon } from "react-icons-kit";
 import styled from 'styled-components';
 
+
+export const StyledContainer = styled.div`
+    z-index: 3;
+    background-color: white;
+`
+
+
 export const StyledComponent = styled.div`
+    z-index: 3;
   max-width: 1280px;
   min-height: 100vh;
   display: block;
   margin: 0 auto;
 position: relative;
-background-color: #F4F0F0;
+background-color: white;
 
 
 
@@ -15,6 +23,7 @@ background-color: #F4F0F0;
 
 .opinion {
     max-width: 900px;
+    width: 90%;
     display: block;
     margin: 0 auto;
     background-color: ${(props) => props.color};
@@ -64,10 +73,11 @@ background-color: #F4F0F0;
 .finish {
     width: 100%;
     height: 60px;
-    background-color: #ecf0f1;
+    background-color: white;
 }
 .list {
     max-width: 900px;
+    width: 90%;
     display: block;
     margin: 0 auto;
     ul {
@@ -137,7 +147,7 @@ background-color: #F4F0F0;
     transform: translate(-50%, 0);
     width: 80%;
     height: 80px;
-    background-color: #F4F0F0;
+    background-color: white;
     border-radius: 20px;
     text-align: center;
     box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);

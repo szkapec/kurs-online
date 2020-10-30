@@ -7,6 +7,7 @@ import mail from "../../image/nav/mail.svg";
 import phone from "../../image/nav/phone.svg";
 export default function Footer() {
   return (
+    <StyledContainer>
     <StyledComponentsFooter>
       <StyledComponents>
         <section>
@@ -64,11 +65,31 @@ export default function Footer() {
       </StyledComponents>
       <StyledCoppy><p className="counter"></p>© 2020. All Rights Reserved.</StyledCoppy>
     </StyledComponentsFooter>
+    </StyledContainer>
   );
 }
 
+const StyledContainer = styled.div`
+    position: sticky;
+    z-index: -1;
+    bottom: 0;
+    background-color: #152f4f;
+
+   ::before {
+     background-color: white;
+     display: block;
+     width: 40px;
+     height: 40px;
+     position: absolute;
+     top: -35px;
+     left: 50%;
+     content: '';
+     transform: rotate(-45deg) translateX(-50%);
+   }
+`
+
 const StyledComponentsFooter = styled.footer`
-font-family: "Kumbh Sans", sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
   max-width: 1280px;
   display: block;
   margin: 0px auto;
@@ -76,6 +97,7 @@ font-family: "Kumbh Sans", sans-serif;
 `
 
 const StyledComponents = styled.div`
+  z-index: -1;
   background-color: #152f4f;
   color: white;
   display: grid;
@@ -89,12 +111,22 @@ const StyledComponents = styled.div`
   }
 
   h2 {
-    padding: 10px;
+    /* padding: 10px 10px 5px; */
+    padding: 10px 10px 5px;
+    font-size: 20px;
   }
   p, ul {
-    padding: 10px;
     color: rgba(255, 255, 255, 0.5);
-
+    font-size: 12px;
+    /* padding: 3px; */
+    @media(min-width: 600px){
+      padding: 6px;
+      font-size: 14px;
+    }
+    @media(min-width: 1000px){
+      padding: 10px;
+      font-size: 16px;
+    }
     a{
         color: rgba(255, 255, 255, 0.5);
         text-decoration: none;
@@ -125,11 +157,13 @@ const StyledComponents = styled.div`
   .contact {
     width: 15px;
     height: 15px;
+    filter: invert(100%);
+    margin-right: 10px;
   }
   .heading {
     width: 200px;
     display: block;
-    margin: 0 auto;
+    margin: 10px auto 0;
     img {
       margin: 0px 15px;
       border-radius: 50%;

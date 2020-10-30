@@ -92,11 +92,11 @@ export default function Amount() {
 }
 
 const StyledCounter = styled.section`
+
   font-family: "Kumbh Sans", sans-serif;
   max-width: 1280px;
   display: block;
   margin: 0px auto;
-  background-color: #ecf0f1;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   text-align: center;

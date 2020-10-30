@@ -14,17 +14,21 @@ export default function Store({addCourse, radius}) {
     window.scrollTo(0,0)
   })
 
-  const nav = "=>"
   return (
     <>
     <StyledDesc radius={radius} className="counter">
-    {addCourse&&<div className="add-course">Popularne kursy programowania</div>}
+    {addCourse&&<div className="course-online">Popularne kursy programowania</div>}
+    <span className="line"></span>
     </StyledDesc>
     
     <Container>
-      {console.log(products)}
+      <Product>
       {products.map((product) => (
         <div key={product.name} className="course">
+          <h3 >{product.name}</h3>
+          <div className="description">
+            {product.desc}
+          </div>
           <div>
             <NavLink exact to={`/course/${product.id}`}>
               <img
@@ -52,27 +56,33 @@ export default function Store({addCourse, radius}) {
             </StyledButton>
           </div>
           <div className="nav">
-              <div className=""><NavLink exact to={`/course/${product.id}`}>{nav}</NavLink></div>
+              <div className=""><NavLink exact to={`/course/${product.id}`}></NavLink></div>
           </div>
+    
         </div>
       ))}
+      </Product>
     </Container>
     </>
   );
 }
-
-
 const Container = styled.div`
+  background-color: #fff;
+  z-index: 3;
+`
+
+const Product = styled.div`
+  z-index: 3;
+  background-color: #fff;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   max-width: 1280px;
   min-height: 100vh;
-  /* display: block; */
   margin: 0 auto;
   position: relative;
   text-align: center;
-  background-color: #ecf0f1;
   padding-bottom: 50px;
+
 
   .nav {
     position: absolute;
@@ -90,25 +100,56 @@ const Container = styled.div`
     }
   }
   .course {
-    max-width: 540px;
+
+      z-index: 3;
+    width: 80%;
     display: block;
     margin: 0 auto;
-    a{color:black}
-
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.06),0 2px 5px 0 rgba(0,0,0,.2);
+    margin: 10px auto 30px;
+    border-radius: 10px;
+    font-family: 'Exo 2', sans-serif;
+   
     position: relative;
     padding: 20px;
     font-size: 20px;
+    a{color:black}
     div {
       padding-top: 10px;
     }
+
+    h3 {
+      line-height: 25px;
+      letter-spacing: 2px;
+      margin: 10px 0;
+    }
+    .description {
+     font-size:16px;
+     line-height: 25px;
+     margin-bottom: 20px;
+    }
   }
   img {
-    width: 90%;
-    border-radius: 20px;
-    max-height: 240px;
+    width: 80%;
+    border-radius: 5px;
+    max-height: 200px;
+    max-width: 400px;
 
   }
-
+  .line {
+    background-color: #6ab04c;
+    width: 80px;
+    height: 5px;
+    display: block;
+    margin: 0 auto;
+    content: '';
+    border-radius: 50%;
+  }
+  .trust {
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
 
 @media(min-width: 600px) {
   img {
@@ -117,6 +158,17 @@ const Container = styled.div`
 }
 @media(min-width: 1100px) {
   grid-template-columns: repeat(2, 1fr);
+  .course {
+    margin: 30px auto;
+  }
+  h3 {
+    font-size: 26px;
+    letter-spacing: 3px;
+  }
+  .description {
+    font-size: 20px;
+    line-height: 30px;
+  }
 }
 `;
 
@@ -129,11 +181,20 @@ const SiceIconCart = withBaseIcon({
 });
 
 const StyledDesc = styled.div`
+  background-color: #fff;
+z-index: 3;
+.course-online {
+    font-size: 28px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px;
+    font-weight: 700;
+  }
 
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
-  background-color: #ecf0f1;
+  /* background-color: #ecf0f1; */
   font-size: 20px;
   padding: 15px 0;
   border-top-right-radius: ${props => props.radius?'30px':'0px'};
@@ -142,7 +203,7 @@ const StyledDesc = styled.div`
     font-size: 20px;
     text-align: center;
     padding: 10px;
-    background-color: #ecf0f1;
+    /* background-color: #ecf0f1; */
     border-radius: 30px 30px 0px 0px;
     text-decoration: underline;
   }

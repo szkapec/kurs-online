@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Product from "../../Data/Products";
 import { power } from "react-icons-kit/icomoon/power";
-import { SideIcon, StyledSection, StyledComponent } from "./Course.css";
+import { SideIcon, StyledSection, StyledComponent, StyledContainer } from "./Course.css";
 import stars from '../../image/star.png';
 export default class Course extends Component {
   componentDidMount() {
@@ -28,6 +28,7 @@ export default class Course extends Component {
     console.log(window);
 
     return (
+      <StyledContainer>
       <StyledComponent color={color}>
         <StyledSection color={color}>
           <b>{name}</b>
@@ -84,6 +85,7 @@ export default class Course extends Component {
 
         </section>
       </StyledComponent>
+      </StyledContainer>
     );
   }
 }
