@@ -6,7 +6,7 @@ export default function Programing() {
       <div className="course-online">Kursy online</div>
       <span className="line"></span>
       <div className="training">
-        <span className="training-s">T</span>o jest naprawdę kompletny kurs
+        <span className="training-s">T</span>o jest kompletny kurs
         JavaScript, który wykracza poza to, czego uczą Cię inne kursy
         JavaScript. Przeprowadzę Cię od kompletnego początkującego JavaScript do
         zaawansowanego programisty. Nauczysz się nie tylko samego języka
@@ -62,5 +62,9 @@ const StyledPrograming = styled.section`
 
   @media (min-width: 1000px) {
     padding: 15px 140px 0;
+    .training {
+      font-size: 18px;
+      line-height: 25px;
+    }
   }
 `;

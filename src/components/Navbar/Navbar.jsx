@@ -49,7 +49,8 @@ const StyledNav = styled.nav`
   text-align: center;
   z-index: 9999;
   @media(min-width: 900px) {
-    grid-template-columns: repeat(5,180px)
+    grid-template-columns: repeat(5,180px);
+    justify-content: space-around;
   }
 
   .responsive-mail, .responsive-phone {

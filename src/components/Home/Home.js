@@ -33,7 +33,7 @@ z-index: 3;
     content: "";
     border-radius: 50%;
 
-    ::before {
+    /* ::before {
       content: "";
       background-color: #6ab04c;
       display: block;
@@ -41,6 +41,6 @@ z-index: 3;
       height: 10px;
       border-radius: 50%;
       margin: 0 auto;
-    }
+    } */
   }
 `;

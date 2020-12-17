@@ -13,7 +13,7 @@ export default function Footer() {
         <section>
           <h2>Aplikacja</h2>
           <p>
-            To jest testowa aplikacja napisana w React, react-hook, stripe, local-storage, context-api, styled-components. Zapraszam do testowania! :)
+            To jest testowa aplikacja napisana w React, react-hook, stripe, local-storage, context-api oraz styled-components. Zapraszam do testowania! :)
           </p>
           <span className="heading">
             <a href="https://www.facebook.com/NoweStronyInternetowe">
@@ -52,7 +52,6 @@ export default function Footer() {
           <h2>Kontakt</h2>
           <p> Janów Lubelski 23-300</p>
           <p>
-            {" "}
             <img className="contact" src={phone} alt="telefon" />
             <a href="tel:+48661360889">661-360-889</a>
           </p>
@@ -70,12 +69,11 @@ export default function Footer() {
 }
 
 const StyledContainer = styled.div`
-    position: sticky;
-    z-index: -1;
+    z-index: 0;
     bottom: 0;
     background-color: #152f4f;
 
-   ::before {
+   /* ::before {
      background-color: white;
      display: block;
      width: 40px;
@@ -85,7 +83,7 @@ const StyledContainer = styled.div`
      left: 50%;
      content: '';
      transform: rotate(-45deg) translateX(-50%);
-   }
+   } */
 `
 
 const StyledComponentsFooter = styled.footer`
@@ -116,6 +114,7 @@ const StyledComponents = styled.div`
     font-size: 20px;
   }
   p, ul {
+    cursor: pointer;
     color: rgba(255, 255, 255, 0.5);
     font-size: 12px;
     /* padding: 3px; */
@@ -128,6 +127,7 @@ const StyledComponents = styled.div`
       font-size: 16px;
     }
     a{
+        cursor: pointer;
         color: rgba(255, 255, 255, 0.5);
         text-decoration: none;
         :hover {
@@ -167,6 +167,7 @@ const StyledComponents = styled.div`
     img {
       margin: 0px 15px;
       border-radius: 50%;
+      cursor:pointer;
       transition-duration: .5s;
       :hover {
           transform: scale(1.1);

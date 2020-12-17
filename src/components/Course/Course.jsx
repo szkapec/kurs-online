@@ -48,14 +48,16 @@ export default class Course extends Component {
         <section className="list">
           <img src={img} alt={name} />
           <div>{name}</div>
+          
+        </section>
+        
+        <section className="opinion">
           <h2>Dla kogo jest ten kurs?</h2>
           <ul>
             {who.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
-        </section>
-        <section className="opinion">
           <div className="container">
             <h3>Wyróżniona recenzja</h3>
             <div className="users">
@@ -81,9 +83,7 @@ export default class Course extends Component {
             <div className="descriptionOpinion">{descriptionOpinion}</div>
           </div>
         </section>
-        <section className="finish">
 
-        </section>
       </StyledComponent>
       </StyledContainer>
     );

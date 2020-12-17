@@ -115,7 +115,6 @@ export default function Cart(props) {
                   Usuń z koszyka
                 </StyledButton>
               </NavLink>
-             
             </div>
           </div>
         ))

@@ -127,6 +127,10 @@ const Product = styled.div`
      font-size:16px;
      line-height: 25px;
      margin-bottom: 20px;
+     @media (min-width: 1000px) {
+      font-size: 18px;
+      line-height: 25px;
+    }
     }
   }
   img {

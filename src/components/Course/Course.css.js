@@ -10,28 +10,49 @@ export const StyledContainer = styled.div`
 
 export const StyledComponent = styled.div`
     z-index: 3;
-  max-width: 1280px;
+ 
   min-height: 100vh;
   display: block;
   margin: 0 auto;
 position: relative;
 background-color: white;
 
-
-
-
-
 .opinion {
-    max-width: 900px;
-    width: 90%;
     display: block;
     margin: 0 auto;
     background-color: ${(props) => props.color};
     min-height: 200px;
     padding: 20px 0 50px;
-   border-bottom-left-radius: 30px;
-   border-bottom-right-radius: 30px;
-   
+    position: relative;
+    ::before {
+    background-color: ${(props) => props.color};
+     display: block;
+     width: 40px;
+     height: 40px;
+     position: absolute;
+     bottom: -5px;
+     left: 50%;
+     content: '';
+     transform: rotate(-45deg) translateX(-50%);
+   }
+    h2, ul, .container  {
+        max-width: 970px;
+        margin: 0 auto;
+        padding: 0 15px 15px;
+    }
+
+    ul {
+      
+        margin: 15px auto;
+        margin-left: 10px;
+        line-height: 20px;
+        @media(min-width:1000px){
+            margin: 0 auto;
+            line-height: 30px;
+            font-size: 18px;
+        }
+    }
+
     .container {
         background-color: #fbfbf8;
         width: 80%;
@@ -111,7 +132,7 @@ background-color: white;
 .description {
     max-width: 1000px;
     display: block;
-    margin: 0 auto;
+    margin: 10px auto;
     padding-top: 60px;
     text-align: center;
     div {
@@ -174,6 +195,13 @@ export const StyledSection = styled.section`
   
 div {
     padding-top: 5px;
+}
+@media(min-width: 1100px){
+    font-size: 22px;
+    div {
+        font-size: 20px;
+        margin-top: 10px;
+    }
 }
 `;
 
