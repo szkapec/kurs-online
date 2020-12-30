@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import products from "../../Data/Products";
 import { CartContext } from "../Cart/context";
 import styled from "styled-components";
@@ -10,9 +10,17 @@ import {ic_code} from 'react-icons-kit/md/ic_code';
 export default function Store({addCourse, radius}) {
   const cartCtx = useContext(CartContext);
 
+    const [alert, setAlert] = useState(false)
     useEffect(() => {   
-    window.scrollTo(0,0)
+    // window.scrollTo(0,0)
   })
+
+  const addalert = (product) => {
+    setAlert(true)
+    setTimeout(() => setAlert(false), 3000)
+  }
+   
+  
 
   return (
     <>
@@ -20,15 +28,19 @@ export default function Store({addCourse, radius}) {
     {addCourse&&<div className="course-online">Popularne kursy programowania</div>}
     <span className="line"></span>
     </StyledDesc>
-    
+   
     <Container>
       <Product>
       {products.map((product) => (
         <div key={product.name} className="course">
+           {alert&&<StyledAlert color={product.color}>
+              <div>Dodano do koszyka</div>
+      </StyledAlert>}
           <h3 >{product.name}</h3>
           <div className="description">
             {product.desc}
           </div>
+        
           <div>
             <NavLink exact to={`/course/${product.id}`}>
               <img
@@ -44,17 +56,21 @@ export default function Store({addCourse, radius}) {
           </div>
           <div>{product.name}</div>
           <div>
-            
+          
+
             <StyledButton
               color={product.color}
               onClick={() => {
+                addalert(product)
                 cartCtx.localAddToCart(product);
               }}
             >
               Dodaj do koszyka
               <SiceIconCart icon={ic_shopping_cart} />
             </StyledButton>
+            
           </div>
+     
           <div className="nav">
               <div className=""><NavLink exact to={`/course/${product.id}`}></NavLink></div>
           </div>
@@ -69,6 +85,20 @@ export default function Store({addCourse, radius}) {
 const Container = styled.div`
   background-color: #fff;
   z-index: 3;
+`
+
+const StyledAlert = styled.div`
+  position: fixed;
+  top: 0;
+  z-index:999999;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  background-color: #6ab04c;
+  height: 40px;
+  div {
+    text-align: center;
+  }
 `
 
 const Product = styled.div`

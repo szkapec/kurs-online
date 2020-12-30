@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { CartContext } from "./context";
 import styled from "styled-components";
-import { StyledButton } from "../../Styled/Button";
 import { NavLink } from "react-router-dom";
 
 
@@ -20,12 +19,13 @@ export default function Cart(props) {
   const stripeToken =
     "pk_test_51HRFuZHt5cjb9PVzBZ6OQ7nUtwkYJ1sowlw7kcof8eKWPcKiWT7X1gt3ZjxtaOIyTaUEWXQVJBk7OAAYeMnuC8df00bUimrTLA";
   const [stripe, setStripe] = useState(null);
+  const [price, setPrice] = useState(0);
 
-  
+
   const ctx = useContext(CartContext);
 
-  const ctxNew = JSON.parse(localStorage.getItem("items")) || []; 
-  
+  const ctxNew = JSON.parse(localStorage.getItem("items")) || [];
+
   useEffect(() => {
     if (window.Stripe) setStripe(window.Stripe(stripeToken));
   }, [stripeToken]);
@@ -46,7 +46,7 @@ export default function Cart(props) {
     if (testing.length === 1) {
       stripe.redirectToCheckout({
         lineItems: [{ price: tabs[0], quantity: ctx.tabs[0].quantity }],
-      
+
         mode: "payment",
         successUrl: "http://localhost:3000/success",
         cancelUrl: "http://localhost:3000/canceled",
@@ -74,64 +74,79 @@ export default function Cart(props) {
       });
     }
   }
-
+  const finalPrice = () => {
+    let price = 0;
+    ctxNew.map(item => {
+      price = price + item.quantity * Number(item.pric)
+    })
+    return price;
+  }
   return (
     <Container className="container">
-      <StyledCart>
+      <StyledCart >
+        <div className="yourbasket">Twój koszyk</div>
+        {ctxNew.length !== 0 ? (
+          ctxNew.map((item) => (
 
-      <div className="yourbasket">Twój koszyk</div>
-      {ctxNew.length !== 0 ? (
-        ctxNew.map((item) => (
+            <div className="container-m" key={item.name}>
+              <div className="cart">
+                <NavLink to={`/course/${item.id}`}><img src={item.img} alt={item.name} /></NavLink>
+                <div className="counter">
+                  <Rate color={item.color} className="rate">raty zero</Rate>
+                  <div className="name"><b>{item.name}</b></div>
+                </div>
+              </div>
 
-          <div key={item.name} className="cart">
-            {console.log(item)}
-            <div className="counter">Nazwa: {item.name}</div>
-            <div>Cena: {formatPrice(item.pric)}</div>
-            <div>
-              Koszt całkowity:{" "}
-              {formatPrice(totalPriceNumber(item.pric, item.quantity))}
-            </div>
-            <div>Ilość: {item.quantity}</div>
-            <div><NavLink to={`/course/${item.id}`}>
-                <StyledButton
-                widthSmall
-                  color={item.color}
-                >
-                  Szczegóły
+              <div className="price">
+                <div>Cena: <b>{formatPrice(item.pric)}</b></div>
+                <div>
+                  Koszt całkowity:{" "}
+                  <b>{formatPrice(totalPriceNumber(item.pric, item.quantity))}</b>
+                </div>
+                <div>Ilość: <b>{item.quantity}</b></div>
+              </div>
+
+              <StyledButtonWrapper className="navlink">
+                <NavLink to={`/course/${item.id}`}>
+                  <StyledButton
+                    widthSmall
+                    color={item.color}
+                  >
+                    Szczegóły
                 </StyledButton>
-              </NavLink></div>
-            <NavLink to={`/course/${item.id}`}><img src={item.img} alt={item.name} /></NavLink>
-          
-            <div>
-         
-            
-              <NavLink to="/cart">
-                <StyledButton
-                  color={item.color}
-                  onClick={() => {
-                    ctx.localRemoveToCart(item);
-                  }}
-                >
-                  Usuń z koszyka
+                </NavLink>
+                <NavLink to="/cart">
+                  <StyledButton
+                    color={item.color}
+                    onClick={() => {
+                      ctx.localRemoveToCart(item);
+                    }}
+                  >
+                    Usuń z koszyka
                 </StyledButton>
-              </NavLink>
+                </NavLink>
+              </StyledButtonWrapper>
             </div>
+          ))
+        ) : (
+            <div className="cart-blank">
+              <div>Twój koszyk jest pusty</div>
+              <div className="counter">
+                Dodaj do koszyka przedmioty i kup je szybko i wygodnie.
           </div>
-        ))
-      ) : (
-        <div className="cart-blank">
-          <div>Twój koszyk jest pusty</div>
-          <div className="counter">
-            Dodaj do koszyka przedmioty i kup je szybko i wygodnie.
-          </div>
-        </div>
-      )}
+            </div>
+          )}
+        <StyledButtonPrice>
+          <NavLink to="/">Kontynułuj zakupy</NavLink>
+          <div>Do zapłaty: <br/> <b>{(finalPrice() * 0.01).toFixed(2)}zł</b></div>
+        </StyledButtonPrice>
 
-      {ctxNew.length !== 0 && (
-        <StyledButtonWrapper>
-          <StyledButton shop onClick={checkout}>Kup teraz</StyledButton>
-        </StyledButtonWrapper>
-      )}
+        {ctxNew.length !== 0 && (
+          <StyledButtonShop>
+            <StyledButton shop onClick={checkout}>Kup teraz</StyledButton>
+          </StyledButtonShop>
+
+        )}
       </StyledCart>
     </Container>
   );
@@ -142,93 +157,185 @@ const Container = styled.div`
 
 
 const StyledCart = styled.div`
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    .cart {
+      display: flex;
+      margin-top: 30px;
+      align-items: center;
+      border-top: 1px solid #95a5a6;
 
-  font-family: "Kumbh Sans", sans-serif;
-  max-width: 1280px;
-  display: block;
-  margin: 0px auto;
-  background-color: white;
-  min-height: 100vh;
-
-  .yourbasket {
-    text-align: center;
-    padding: 20px 0 0;
-    font-size: 24px;
-    font-weight: 700;
-  }
-  a {
-    text-decoration: none;
-  }
-
-  .cart {
-    margin-top: 40px;
-    text-align: center;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #95a5a6;
-    img {
-      width: 80%;
-      max-width: 400px;
-      border-radius: 10px;
-      margin: 10px 0;
+      .counter {
+        .rate {
+          color: white;
+          text-align: center;
+          width: 70px;
+          padding: 5px 10px;
+        }
+        .name {
+          font-size: 18px;
+          margin-top: 10px;
+          letter-spacing: 1px;
+        }
+      }
     }
-    div {
-      margin-top: 10px;
+    .price {
+      display: flex;
+      margin-left: 20px;
+      flex-wrap: wrap;
       font-size: 18px;
-    }
-    @media (min-width: 1100px) {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-column-gap: 0px;
-      grid-row-gap: 0px;
+      div {
+        width: 100%;
+        margin-top: 7px;
+        letter-spacing: 1px;
+      }
+      div:last-child {
+        margin-bottom: 20px;
+      }
 
-      div:nth-child(1) {
-        grid-area: 1 / 1 / 2 / 2;
-        margin-top: 30px;
+    }
+
+    img {
+      margin: 20px;
+      width: 120px;
+      height: 80px;
+    }
+
+    .yourbasket {
+      font-size: 26px;
+      margin: 15px 20px;
+      font-weight: 700;
+      
+    }
+    @media(min-width: 800px) {
+      .container-m {
+        display: flex;
+        flex-wrap: wrap;
+        border-top: 1px solid #95a5a6;
       }
-      img {
-        grid-area: 1 / 2 / 2 / 3;
-      }
-      div:nth-child(2) {
-        grid-area: 1 / 1 / 2 / 2;
-        margin-top: 60px;
-      }
-      div:nth-child(3) {
-        grid-area: 1 / 1 / 2 / 2;
-        margin-top: 90px;
-      }
-      div:nth-child(4) {
-        grid-area: 1 / 1 / 2 / 2;
-        margin-top: 120px;
-      }
-      div:nth-child(5) {
-        grid-area: 1 / 1 / 2 / 2;
-        margin-top: 150px;
-      }
-      div:nth-child(6) {
-        grid-area: 1 / 1 / 2 / 2;
-        margin-top: 150px;
-      }
-      .div8 {
-        grid-area: 1 / 1 / 2 / 2;
+      .cart {
+      border:none;
+      margin-top: 40px;
+      min-width: 500px;
+      min-height: 180px;
+      .counter {
+        .rate {
+          width: 90px;
+          font-size: 18px;
+        }
+        .name {
+          font-size: 24px;
+          margin-top: 15px;
+        }
       }
     }
-  }
-  .cart-blank {
-    padding: 30px;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    text-align: center;
-    :last-child {
+    .price {
+      margin-left: 30px;
+      flex-wrap: wrap;
       font-size: 20px;
-    }
-    div {
-      padding: 20px;
-      line-height: 25px;
+      max-width: 250px;
+      height: 150px;
+      margin-top: 50px;
+      div {
+        width: 100%;
+        margin-top: 7px;
+        letter-spacing: 1px;
+      }
+      div:last-child {
+        margin-bottom: 20px;
+      }
 
     }
-  }
+
+    img {
+      margin: 20px;
+      width: 220px;
+      height: 100%;
+    }
+
+    .yourbasket {
+      font-size: 30px;
+     
+    }
+    }
 `;
+
+const StyledButton = styled.div`
+    background-color: ${props => props.color ? props.color : 'orange'};
+    width: 120px;
+    display: inline-block;
+    padding: 10px 10px;
+    margin: 10px 5px;
+    text-align: center;
+    color: white;
+    border: none;
+    :hover {
+      text-decoration: underline;
+    }
+`
 
 const StyledButtonWrapper = styled.div`
-  padding: 20px;
-`;
+  text-align: center;
+
+  @media(min-width: 800px) {
+      display: block;
+      width: 100%;
+      font-size: 20px;
+      div {
+        width: 180px;
+        margin: 20px;
+      }
+    }
+`
+const Rate = styled.div`
+  background-color: ${({ color }) => color ? color : 'orange'};
+`
+
+const StyledButtonPrice = styled.div`
+    border-top: 1px solid #95a5a6;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    a,div {
+      width: 100%;
+      text-align:center;
+      font-size: 16px;
+      line-height: 30px;
+      b {
+        font-size: 22px;
+      }
+    }
+    a {
+      color: black;
+    }
+  @media(min-width: 800px) {
+    margin-top: 50px;
+    a,div {
+      width: 100%;
+      text-align:center;
+      font-size: 22px;
+      line-height: 35px;
+      b {
+        font-size: 26px;
+      }
+    }
+    a {
+      color: black;
+    }
+  }
+`
+
+const StyledButtonShop = styled.div`
+  text-align: center;
+  margin: 10px;
+  @media(min-width: 800px) {
+      display: block;
+      width: 100%;
+      font-size: 20px;
+      div {
+        width: 180px;
+        margin: 20px;
+      }
+    }
+`

@@ -18,6 +18,7 @@ const products = [
     ],
     nickName: "Andrzej Struga",
     numberOpinon: "19",
+    cart: false,
     descriptionOpinion: "Dobry! Powoli, ale pewnie wszystko wyjaśnił. Długie, rozdziały zrobione na temat. Wszystko, co jest potrzebne, zostało powiedziane. Miałem już pewne doświadczenie z HTML5 i CSS, ale zdecydowałem się pójść na kolejny kurs, aby być może zobaczyć kilka nowych rzeczy lub uzyskać więcej wyjaśnień. Nie żałuję, zbudowałem Omnifood z Mateuszem i ponownie, przebudowałem go sam, z Grid & Sass. Świetnie się bawiłem i zdobyłem dużo wiedzy. Dzięki i do zobaczenia w następnym. "
 },
 
@@ -32,6 +33,7 @@ const products = [
     desc: "Ten kurs pomoże Ci uzyskać biegłość w posługiwaniu się kluczowymi właściwościami CSS a także sprawnie wykorzystywać JavaScript i jQuery w celu uatrakcyjnienia (ożywienia) tworzonego projektu. Nauczysz się korzystać z nowoczesnych, bardziej zaawansowanych technik",
     stage: `Naucz się tworzyć atrakcyjne strony internetowe z wykorzystaniem bardziej zaawansowanych technik CSS i JavaScript (Etap 2)`,
     popular: "1891",
+    cart: false,
     who: [
         "osoby, które uczyły się już CSS i HTML, znają fundamenty tworzenia stron internetowych",
         "osoby, które ukończyły mój kurs HTML + CSS i chcą dalej rozwijać swoje umiejętności",
@@ -44,6 +46,7 @@ const products = [
     price: "price_1HS7wIHt5cjb9PVzxrjFsi1M",
     pric: "2200",
     name: "Kurs Node",
+    cart: false,
     color: "#3F863A",
     id: 4,
     img: "https://blog.aftermarket.pl/content/images/2019/11/instalacja_ghost-1.jpg",
@@ -74,6 +77,7 @@ const products = [
     price: "price_1HRb9AHt5cjb9PVzaiohV7LI",
     pric: "1000",
     name: "Kurs React",
+    cart: false,
     color: "#18BCEE",
     id: 3,
     img: 'https://miro.medium.com/max/3840/1*yjH3SiDaVWtpBX0g_2q68g.png',
@@ -99,6 +103,7 @@ const products = [
     pric: "24000",
     name: "Kurs Java!",
     color: "#E82F2E",
+    cart: false,
     id: 5,
     img: 'https://miro.medium.com/max/620/1*Pb47wnmlN201inlk7FnT7A.jpeg',
     description: `W moim kursie Javy nie musisz znać podstaw programowania. Nauczysz się wszystkiego od zera. Obal mit, że programowanie jest dla nielicznych. Pisz własne programy! :)
@@ -127,6 +132,7 @@ const products = [
     name: "Kurs Java Spring",
     color: "#6CB33E",
     id: 6,
+    cart: false,
     img: "https://spring.io/images/OG-Spring.png",
     description: `Chcesz zostać ekspertem w Spring Framework? Chcesz zostać Modern Spring Developer ? Dołącz do kursu, aby nauczyć się Spring Framework w nowoczesny sposób - sposób, w jaki projekty Java w świecie rzeczywistym go używają!
     Poznaj magię Spring Framework . Od IOC (Inversion of Control), DI (Dependency Injection), Application Context do świata Java Spring Boot, Spring AOP , Spring JDBC i JPA. Przygotuj się na niesamowitą podróż. 

@@ -11,7 +11,7 @@ export default function Home() {
     <StyledComponent className="main-container">
       <FirstBasic />
       <Programing />
-      <Store addCourse radius/>
+      <Store addCourse radius={true}/>
       <Amount />
     </StyledComponent>
   );

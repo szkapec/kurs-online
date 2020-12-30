@@ -8,20 +8,26 @@ export default function CartProvider({ children }) {
   function addToCart(item) {
     setItems((prevState) => [...prevState, item]);
   }
+
   function localAddToCart(item) {
-    let { color, name, pric, price, quantity, img, id } = item;
+    let { color, name, pric, price, quantity, img, id, cart } = item;
     let product = { color, name, pric, price, quantity, img, id };
     let found = tabs.find((items) => items.price === product.price);
+    cart = true;
     if (found) {
       let elTab = tabs.find((item) => item.price === found.price);
       elTab.quantity++;
     } else {
       product.quantity = 1;
+      product.cart = true;
       tabs.push(product);
     }
 
     localStorage.setItem("items", JSON.stringify(tabs));
   }
+
+
+
   function localRemoveToCart(item) {
     let { color, name, pric, price, quantity, id } = item;
     let product = { color, name, pric, price, quantity, id };
@@ -34,6 +40,7 @@ export default function CartProvider({ children }) {
     } else if (found.quantity === 1) {
       let locTab = tabs.filter((item) => item.price !== found.price);
       console.log(locTab)
+      product.cart = false;
       localStorage.removeItem("items");
       found.quantity = 0;
       tabs = locTab;

@@ -7,7 +7,8 @@ import mail from '../../image/nav/mail.svg';
 import phone from '../../image/nav/phone.svg'
 export default function Navbar() {
   return (
-    <StyledNav>
+   <StyledContainer>
+      <StyledNav>
       <div className="home">
           <NavLink exact to="/">
             Główna
@@ -35,14 +36,18 @@ export default function Navbar() {
       </div>
 
     </StyledNav>
+   </StyledContainer>
   );
 }
-
-const StyledNav = styled.nav`
-
+const StyledContainer = styled.nav`
+    background-color: #293332;
+`
+const StyledNav = styled.div`
+  max-width: 1100px;
+  margin: 0 auto;
   width: 100%;
   height: 40px;
-  background-color: #293332;
+
   display: grid;
   grid-template-columns: 80px 80px 1fr;
   grid-template-rows: 40px;
