@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/kurs-online/static/css/main.afbe430d.chunk.css",
-    "main.js": "/kurs-online/static/js/main.e977721b.chunk.js",
-    "main.js.map": "/kurs-online/static/js/main.e977721b.chunk.js.map",
+    "main.js": "/kurs-online/static/js/main.1751ddf1.chunk.js",
+    "main.js.map": "/kurs-online/static/js/main.1751ddf1.chunk.js.map",
     "runtime-main.js": "/kurs-online/static/js/runtime-main.40ff5d52.js",
     "runtime-main.js.map": "/kurs-online/static/js/runtime-main.40ff5d52.js.map",
-    "static/js/2.23bd59ee.chunk.js": "/kurs-online/static/js/2.23bd59ee.chunk.js",
-    "static/js/2.23bd59ee.chunk.js.map": "/kurs-online/static/js/2.23bd59ee.chunk.js.map",
+    "static/js/2.6b56a977.chunk.js": "/kurs-online/static/js/2.6b56a977.chunk.js",
+    "static/js/2.6b56a977.chunk.js.map": "/kurs-online/static/js/2.6b56a977.chunk.js.map",
     "index.html": "/kurs-online/index.html",
-    "precache-manifest.7011ba2e91a154115b7a1e7ab330b694.js": "/kurs-online/precache-manifest.7011ba2e91a154115b7a1e7ab330b694.js",
+    "precache-manifest.76e7110c7bd3d220bbd3967e241e052e.js": "/kurs-online/precache-manifest.76e7110c7bd3d220bbd3967e241e052e.js",
     "service-worker.js": "/kurs-online/service-worker.js",
     "static/css/main.afbe430d.chunk.css.map": "/kurs-online/static/css/main.afbe430d.chunk.css.map",
-    "static/js/2.23bd59ee.chunk.js.LICENSE.txt": "/kurs-online/static/js/2.23bd59ee.chunk.js.LICENSE.txt",
+    "static/js/2.6b56a977.chunk.js.LICENSE.txt": "/kurs-online/static/js/2.6b56a977.chunk.js.LICENSE.txt",
     "static/media/adress.svg": "/kurs-online/static/media/adress.348839a4.svg",
     "static/media/book.svg": "/kurs-online/static/media/book.daed145e.svg",
     "static/media/data.svg": "/kurs-online/static/media/data.1d23af98.svg",
@@ -29,8 +29,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.40ff5d52.js",
-    "static/js/2.23bd59ee.chunk.js",
+    "static/js/2.6b56a977.chunk.js",
     "static/css/main.afbe430d.chunk.css",
-    "static/js/main.e977721b.chunk.js"
+    "static/js/main.1751ddf1.chunk.js"
   ]
 }
