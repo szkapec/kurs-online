@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "391c2e6739e18cb5f7be92997b5aafcb",
+    "revision": "cd9cb7afbf69c19dd2413eb427058824",
     "url": "/kurs-online/index.html"
   },
   {
-    "revision": "aeced20475f839b68643",
+    "revision": "7be9cd90b2d30d80e537",
     "url": "/kurs-online/static/css/main.afbe430d.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kurs-online/static/js/2.6b56a977.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "aeced20475f839b68643",
-    "url": "/kurs-online/static/js/main.161da922.chunk.js"
+    "revision": "7be9cd90b2d30d80e537",
+    "url": "/kurs-online/static/js/main.4668280f.chunk.js"
   },
   {
     "revision": "a3aa2c57d93c9bcf8a6d",
