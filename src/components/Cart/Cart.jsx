@@ -140,7 +140,11 @@ export default function Cart(props) {
           <NavLink to="/">Kontynułuj zakupy</NavLink>
           {ctxNew.length !== 0 && <div>Do zapłaty: <br/> <b>{(finalPrice() * 0.01).toFixed(2)}zł</b></div>}
         </StyledButtonPrice>
+        {ctxNew.length === 0 && (
+          <Styledleng>
+          </Styledleng>
 
+        )}
         {ctxNew.length !== 0 && (
           <StyledButtonShop>
             <StyledButton shop onClick={checkout}>Kup teraz</StyledButton>
@@ -345,4 +349,8 @@ const StyledCartBlank = styled.div`
   margin-left: 20px;
   font-size: 18px;
   line-height: 30px;
+`
+
+const Styledleng = styled.div`
+  min-height: 40vh;
 `
