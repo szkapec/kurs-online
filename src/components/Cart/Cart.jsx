@@ -129,16 +129,16 @@ export default function Cart(props) {
             </div>
           ))
         ) : (
-            <div className="cart-blank">
+            <StyledCartBlank>
               <div>Twój koszyk jest pusty</div>
               <div className="counter">
                 Dodaj do koszyka przedmioty i kup je szybko i wygodnie.
           </div>
-            </div>
+            </StyledCartBlank>
           )}
         <StyledButtonPrice>
           <NavLink to="/">Kontynułuj zakupy</NavLink>
-          <div>Do zapłaty: <br/> <b>{(finalPrice() * 0.01).toFixed(2)}zł</b></div>
+          {ctxNew.length !== 0 && <div>Do zapłaty: <br/> <b>{(finalPrice() * 0.01).toFixed(2)}zł</b></div>}
         </StyledButtonPrice>
 
         {ctxNew.length !== 0 && (
@@ -338,4 +338,11 @@ const StyledButtonShop = styled.div`
         margin: 20px;
       }
     }
+`
+
+const StyledCartBlank = styled.div`
+  margin-top: 30px;
+  margin-left: 20px;
+  font-size: 18px;
+  line-height: 30px;
 `
