@@ -61,7 +61,8 @@ export default function Footer() {
             <a href="mailto:mateusz.kapron24@gmail.com">mateusz.kapron24@gmail.com</a>
           </p>
         </section>
-    <div class="image-rotator"><div class="rotator-slide" id="rotator-slide-1"><a href="https://www.darmowylicznik.pl/" title="Przejdź na stronę licznika" target="_blank"><img src="https://www.darmowylicznik.pl/licznik.php?id=142627" alt="Darmowy licznik odwiedzin"/></a></div></div>
+    
+
       </StyledComponents>
       <StyledCoppy><p className="counter"></p>© 2020. All Rights Reserved.</StyledCoppy>
     </StyledComponentsFooter>
