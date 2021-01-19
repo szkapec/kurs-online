@@ -21,12 +21,13 @@ export default function Cart(props) {
   const [stripe, setStripe] = useState(null);
   const [price, setPrice] = useState(0);
 
-
+console.log(stripe,'stripppe')
   const ctx = useContext(CartContext);
 
   const ctxNew = JSON.parse(localStorage.getItem("items")) || [];
 
   useEffect(() => {
+    console.log(window.Stripe)
     if (window.Stripe) setStripe(window.Stripe(stripeToken));
   }, [stripeToken]);
 
