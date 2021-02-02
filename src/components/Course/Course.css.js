@@ -14,18 +14,19 @@ export const StyledComponent = styled.div`
   min-height: 100vh;
   display: block;
   margin: 0 auto;
-position: relative;
-background-color: white;
+    position: relative;
+    background-color: white;
 
 .opinion {
     display: block;
     margin: 0 auto;
-    background-color: ${(props) => props.color};
+    /* background-color: ${(props) => props.color}; */
     min-height: 200px;
     padding: 20px 0 50px;
     position: relative;
+    max-width: 800px;
     ::before {
-    background-color: ${(props) => props.color};
+        background-color: white;
      display: block;
      width: 40px;
      height: 40px;
@@ -46,18 +47,26 @@ background-color: white;
         margin: 15px auto;
         margin-left: 10px;
         line-height: 20px;
+
+        li {
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+
         @media(min-width:1000px){
             margin: 0 auto;
             line-height: 30px;
             font-size: 18px;
         }
+
     }
 
     .container {
         background-color: #fbfbf8;
         width: 80%;
         display: block;
-        margin: 0px auto;
+        margin: 20px auto;
         border: 1px solid black;
         border-radius: 5px;
 
@@ -135,6 +144,7 @@ background-color: white;
     margin: 10px auto;
     padding-top: 60px;
     text-align: center;
+
     div {
         font-size: 25px;
         font-weight: bold;
@@ -143,19 +153,19 @@ background-color: white;
     p {
        
         margin: 0 15px 15px;
-        line-height: 20px;
+        line-height: 25px;
     }
     font-size: 16px;
     @media(min-width: 500px){
         font-size: 18px;
         p {
-            line-height: 24px;
+            line-height: 28px;
         }
 }
     @media(min-width: 800px){
         font-size: 20px;
         p {
-            line-height: 28px;
+            line-height: 30px;
         }
 }
 

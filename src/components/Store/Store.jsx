@@ -94,10 +94,13 @@ const StyledAlert = styled.div`
   left: 0px;
   right: 0px;
   width: 100%;
-  background-color: #6ab04c;
+  background-color: white;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,.06),0 2px 5px 0 rgba(0,0,0,.2);
   height: 40px;
+
   div {
     text-align: center;
+    margin-bottom: 10px;
   }
 `
 

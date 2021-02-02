@@ -31,8 +31,6 @@ console.log(stripe,'stripppe')
     if (window.Stripe) setStripe(window.Stripe(stripeToken));
   }, [stripeToken]);
 
-  useEffect(() => {
-  })
 
   function checkout() {
     const testing = ctx.tabs.map((item) => item.price);
@@ -267,7 +265,8 @@ const StyledCart = styled.div`
 `;
 
 const StyledButton = styled.div`
-    background-color: ${props => props.color ? props.color : 'orange'};
+    background-color: ${props => props.color ? props.color : '#535c68'};
+    
     width: 120px;
     display: inline-block;
     padding: 10px 10px;

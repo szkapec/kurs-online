@@ -23,7 +23,7 @@ export default function Navbar() {
 
       
       <div className="responsive-mail"> 
-        <img src={mail} alt="mail"/> <a href="mailto:mateusz.kapron24@gmail.com">mateusz.k@gmail.com</a>
+        <img src={mail} alt="mail"/> <a href="mailto:mateusz.kapron24@gmail.com">E-mail</a>
       </div>
       <div className="responsive-phone"> 
        <img src={phone} alt="mail"/> <a href="tel:+48661360889">661-360-889 </a> 
@@ -40,7 +40,7 @@ export default function Navbar() {
   );
 }
 const StyledContainer = styled.nav`
-    background-color: #293332;
+    background-color: #535c68;
 `
 const StyledNav = styled.div`
   max-width: 1100px;
