@@ -4,6 +4,7 @@ import Store from "../Store/Store";
 import Amount from "./Sections/Amount";
 import FirstBasic from "./Sections/FirstBasic";
 import Programing from "./Sections/Programing";
+import Team from "./Sections/Team";
 
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <Programing />
       <Store addCourse radius={true}/>
       <Amount />
+      <Team/>
     </StyledComponent>
   );
 }

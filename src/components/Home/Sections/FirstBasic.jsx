@@ -162,7 +162,21 @@ const StyledFirstBasic = styled.div`
         }
       }
     }
+
     article:nth-child(1) {
+    background-color: #18757d;
+  }
+  article:nth-child(2) {
+    background-color: #843195;
+  }
+  article:nth-child(3) {
+    background-color: #426c30;
+  }
+  article:nth-child(4) {
+    background-color: #d0a91a;
+  }
+    @media(min-width: 800px){
+      article:nth-child(1) {
       background-color: #22a6b3;
     }
     article:nth-child(2) {
@@ -173,6 +187,7 @@ const StyledFirstBasic = styled.div`
     }
     article:nth-child(4) {
       background-color: #f9ca24;
+    }
     }
   }
 `;
